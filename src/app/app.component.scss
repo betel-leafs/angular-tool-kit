@@ -1,0 +1,32 @@
+mat-drawer {
+  padding-top: 20px;
+  a {
+    color: #ffe57f;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+.main-content {
+  margin-left: 10px;
+}
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eee;
+}
+
+
+
+.header-top {
+  text-align: center;
+  background-color: #7635e9cc;
+
+  h1 {
+    margin: 0;
+  }
+}

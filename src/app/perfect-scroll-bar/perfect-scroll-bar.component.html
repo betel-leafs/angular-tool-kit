@@ -1,0 +1,9 @@
+<perfect-scrollbar style="max-width: 600px; max-height: 600px;" [config]="config">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <mat-list>
+    <mat-list-item *ngFor="let c of countries">
+      {{c.name}} {{c.alpha2Code}} {{c.nativeName}}
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</perfect-scrollbar>

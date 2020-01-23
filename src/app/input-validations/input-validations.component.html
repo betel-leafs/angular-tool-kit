@@ -1,0 +1,29 @@
+
+<form [formGroup]="ProdForm" novalidate>
+  <div fxLayout="column">
+    <div fxFlex="50">
+      <mat-form-field>
+        <input matInput formControlName="name" placeholder="Number with .00">
+        <mat-error *ngIf="errorHandling('name', 'pattern')||errorHandling('name', 'required')">
+          Must be number with max two optional decimals.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50">
+      <mat-form-field>
+        <input matInput formControlName="number" placeholder="only integers">
+        <mat-error *ngIf="errorHandling('number', 'pattern')||errorHandling('number', 'required')">
+          Only numbers
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50">
+      <mat-form-field>
+        <input matInput formControlName="id" placeholder="without Zero numbers">
+        <mat-error *ngIf="errorHandling('id', 'pattern')||errorHandling('id', 'required')">
+          only numbers exclude zero
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+</form>
