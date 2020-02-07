@@ -25,6 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CountriesApiService } from './service/countries-api.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NumericDirective } from './directives/numeric.directive';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     PerfectScrollBarComponent,
     InputValidationsComponent,
     PageNotFoundComponent,
-    MatTreeComponent
+    MatTreeComponent,
+    NumericDirective
   ],
   imports: [
     BrowserModule,
