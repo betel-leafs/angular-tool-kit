@@ -9,7 +9,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDividerModule } from '@angular/material/divider';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PerfectScrollBarComponent } from './perfect-scroll-bar/perfect-scroll-bar.component';
 import { InputValidationsComponent } from './input-validations/input-validations.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -25,7 +25,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CountriesApiService } from './service/countries-api.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { NumericDirective } from './directives/numeric.directive';
+import { NumericDirective, AutoFocusDirective } from './directives/numeric.directive';
+import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
+import { MatDialogContainerComponent } from './mat-dialog-container/mat-dialog-container.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -34,6 +36,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 const appRoutes: Routes = [
   { path: 'perfect-scroll', component: PerfectScrollBarComponent },
   { path: 'mat-tree', component: MatTreeComponent },
+  { path: 'mat-dialog', component: MatDialogContainerComponent },
   { path: 'input-validations', component: InputValidationsComponent },
   {
     path: '',
@@ -50,7 +53,10 @@ const appRoutes: Routes = [
     InputValidationsComponent,
     PageNotFoundComponent,
     MatTreeComponent,
-    NumericDirective
+    NumericDirective,
+    AutoFocusDirective,
+    MatDialogComponent,
+    MatDialogContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -71,12 +77,17 @@ const appRoutes: Routes = [
     MatTreeModule,
     MatCheckboxModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
+  entryComponents: [MatDialogComponent],
   providers: [CountriesApiService, {
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-  }],
+  }, {
+      provide: MatDialogRef,
+      useValue: {}
+    }, { provide: MAT_DIALOG_DATA, useValue: [] },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@
   <div fxLayout="column">
     <div fxFlex="50">
       <mat-form-field>
-        <input matInput numeric decimals="2" type="text" formControlName="Quantity"
+        <input [autoFocus]="true" matInput numeric decimals="2" type="text" formControlName="Quantity"
           placeholder="Quantity">
         <mat-error *ngIf="errorHandling('Quantity', 'required') || errorHandling('Quantity', 'min')">
           Must be number with max two optional decimals.
@@ -27,7 +27,7 @@
     </div>
     <div fxFlex="50">
       <mat-form-field>
-        <input matInput formControlName="minitues" placeholder="without Zero numbers">
+        <input matInput  formControlName="minitues" placeholder="without Zero numbers">
         <mat-error *ngIf="errorHandling('minitues', 'pattern')||errorHandling('minitues', 'required')">
           only numbers exclude zero
         </mat-error>
