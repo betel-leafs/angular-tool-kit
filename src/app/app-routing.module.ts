@@ -1,11 +1,30 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PerfectScrollBarComponent } from './perfect-scroll-bar/perfect-scroll-bar.component';
+import { MatTreeComponent } from './mat-tree/mat-tree.component';
+import { MatDialogContainerComponent } from './mat-dialog-container/mat-dialog-container.component';
+import { InputValidationsComponent } from './input-validations/input-validations.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
-const routes: Routes = [];
+const appRoutes: Routes = [
+  { path: 'perfect-scroll', component: PerfectScrollBarComponent },
+  { path: 'mat-tree', component: MatTreeComponent },
+  { path: 'mat-dialog', component: MatDialogContainerComponent },
+  { path: 'input-validations', component: InputValidationsComponent },
+  { path: 'reactive-form', component: ReactiveFormComponent },
+  {
+    path: '',
+    redirectTo: '/input-validations',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
