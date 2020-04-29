@@ -12,8 +12,8 @@ export class InputValidationsComponent implements OnInit {
   contextForm: FormGroup;
   ProdForm: FormGroup;
   numberPattern: string = "^[0-9]+(\.[0-9]{1,2})?$"; // Numbers with 2 decimals
-  onlyNumbers:string="^[0-9]*$";
-  onlyNumbersExcludeZero="^[1-9]*$";
+  onlyNumbers: string = "^[0-9]*$";
+  onlyNumbersExcludeZero = "^[1-9][0-9]*$";
   isFormChanged: boolean = false;
   constructor(private formBuilder: FormBuilder, ) {
     this.contextForm = this.formBuilder.group({
@@ -23,9 +23,10 @@ export class InputValidationsComponent implements OnInit {
   ngOnInit(): void {
 
     this.ProdForm = this.formBuilder.group({
-      name: ['', Validators.compose([Validators.required, Validators.pattern(this.numberPattern)])],
-      number:['', Validators.compose([Validators.required, Validators.pattern(this.onlyNumbers)])],
-      id:['', Validators.compose([Validators.required, Validators.pattern(this.onlyNumbersExcludeZero)])],
+      Quantity: ['', Validators.compose([Validators.required, Validators.min(0.1)])],
+      days: ['', Validators.compose([Validators.required, Validators.pattern(this.onlyNumbers)])],
+      hours: ['', Validators.compose([Validators.required, Validators.pattern(this.onlyNumbersExcludeZero)])],
+      minitues: ['', Validators.compose([Validators.required, Validators.pattern(this.onlyNumbersExcludeZero)])]
     })
   }
   public errorHandling = (control: string, error: string) => {
@@ -38,6 +39,14 @@ export class InputValidationsComponent implements OnInit {
       name: ['rajesh'],
       lastName: ['Mogasala']
     });
+  }
+  validateNumber(e: any) {
+    let input = String.fromCharCode(e.charCode);
+    const reg = /^\d*(?:[.,]\d{1,2})?$/;
+
+    if (!reg.test(input)) {
+      e.preventDefault();
+    }
   }
 
 }

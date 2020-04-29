@@ -9,10 +9,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDividerModule } from '@angular/material/divider';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PerfectScrollBarComponent } from './perfect-scroll-bar/perfect-scroll-bar.component';
 import { InputValidationsComponent } from './input-validations/input-validations.component';
-import { Routes, RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -25,22 +24,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CountriesApiService } from './service/countries-api.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NumericDirective, AutoFocusDirective } from './directives/numeric.directive';
+import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
+import { MatDialogContainerComponent } from './mat-dialog-container/mat-dialog-container.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MatSelectModule } from '@angular/material/select';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
-
-const appRoutes: Routes = [
-  { path: 'perfect-scroll', component: PerfectScrollBarComponent },
-  { path: 'mat-tree', component: MatTreeComponent },
-  { path: 'input-validations', component: InputValidationsComponent },
-  {
-    path: '',
-    redirectTo: '/input-validations',
-    pathMatch: 'full'
-  },
-  { path: '**', component: PageNotFoundComponent }
-];
 
 @NgModule({
   declarations: [
@@ -48,7 +41,12 @@ const appRoutes: Routes = [
     PerfectScrollBarComponent,
     InputValidationsComponent,
     PageNotFoundComponent,
-    MatTreeComponent
+    MatTreeComponent,
+    NumericDirective,
+    AutoFocusDirective,
+    MatDialogComponent,
+    MatDialogContainerComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -63,18 +61,24 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     PerfectScrollbarModule,
     CdkTreeModule,
     MatTreeModule,
     MatCheckboxModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatSelectModule
   ],
+  entryComponents: [MatDialogComponent],
   providers: [CountriesApiService, {
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-  }],
+  }, {
+      provide: MatDialogRef,
+      useValue: {}
+    }, { provide: MAT_DIALOG_DATA, useValue: [] },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
