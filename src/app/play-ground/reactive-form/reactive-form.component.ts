@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
-import { CountriesApiService } from '../service/countries-api.service';
-import { Country } from '../models/country';
+import { CountriesApiService } from '../../service/countries-api.service';
+import { Country } from '../../models/country';
 
 @Component({
   selector: 'app-reactive-form',
@@ -15,7 +15,7 @@ export class ReactiveFormComponent implements OnInit {
   public countries: Country[] = [];
   constructor(private formBuilder: FormBuilder, private apiService: CountriesApiService) {
     this.sampleForm = this.formBuilder.group({
-      name: [''],
+      name: ['My Name'],
       country: ['']
     });
   };
@@ -28,5 +28,11 @@ export class ReactiveFormComponent implements OnInit {
   }
   save() {
     this.result = JSON.stringify(this.sampleForm.value);
+  }
+  set() {
+    this.sampleForm.get('name').setValue("Hello rajesh");
+  }
+  get() {
+    alert(this.sampleForm.get('name').value)
   }
 }

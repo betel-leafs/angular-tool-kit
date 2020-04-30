@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { MatDialogComponent } from '../mat-dialog/mat-dialog.component';
+import { MatDialogComponent } from '../../shared/mat-dialog/mat-dialog.component';
 
 @Component({
   selector: 'app-mat-dialog-container',

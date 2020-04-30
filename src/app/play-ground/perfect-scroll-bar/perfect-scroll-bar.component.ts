@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Country } from '../models/country';
-import { CountriesApiService } from '../service/countries-api.service';
+import { Country } from '../../models/country';
+import { CountriesApiService } from '../../service/countries-api.service';
 
 @Component({
   selector: 'app-perfect-scroll-bar',
