@@ -15,7 +15,8 @@ export class ReactiveFormComponent implements OnInit {
   public countries: Country[] = [];
   constructor(private formBuilder: FormBuilder, private apiService: CountriesApiService) {
     this.sampleForm = this.formBuilder.group({
-      name: ['My Name'],
+      firstName: [''],
+      lastName: [''],
       country: ['']
     });
   };

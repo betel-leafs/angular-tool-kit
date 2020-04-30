@@ -11,6 +11,7 @@ export class PerfectScrollBarComponent implements OnInit {
 
   public countries: Country[] = [];
   config: any;
+  isLoading = false;
   constructor(private apiService: CountriesApiService, ) { }
 
   ngOnInit() {
@@ -18,8 +19,10 @@ export class PerfectScrollBarComponent implements OnInit {
       wheelSpeed: 2,
       minScrollbarLength: 200
     };
+    this.isLoading = true;
     this.apiService.getCountryCodes().subscribe(r => {
       this.countries = r;
+      this.isLoading = false;
     });
   }
 
