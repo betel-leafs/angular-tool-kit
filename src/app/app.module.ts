@@ -32,6 +32,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatSelectModule } from '@angular/material/select';
 import { PlayGroundModule } from './play-ground/play-ground.module';
 import { SharedModule } from './shared/shared.module';
+import { ProgressContainerComponent } from './progress-container/progress-container.component';
+import { DynamicOverlay } from './service/dynamic-overlay.service';
+import { DynamicOverlayContainer } from './service/dynamic-overlay-container.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -48,7 +51,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AutoFocusDirective,
     MatDialogComponent,
     MatDialogContainerComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ProgressContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -75,14 +79,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PlayGroundModule,
     SharedModule
   ],
-  entryComponents: [MatDialogComponent],
+  entryComponents: [MatDialogComponent, ProgressContainerComponent],
   providers: [CountriesApiService, {
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
   }, {
       provide: MatDialogRef,
       useValue: {}
-    }, { provide: MAT_DIALOG_DATA, useValue: [] },],
+    }, { provide: MAT_DIALOG_DATA, useValue: [] }, DynamicOverlay, DynamicOverlayContainer],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
