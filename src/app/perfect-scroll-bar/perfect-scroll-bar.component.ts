@@ -1,6 +1,5 @@
 import { Component, OnInit, ElementRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { ShowProgressService } from 'src/app/service/show-progress.service';
-import { DynamicComponent } from 'src/app/shared/dynamic/dynamic.component';
 import { Country } from '../models/country';
 import { CountriesApiService } from '../service/countries-api.service';
 
@@ -14,7 +13,7 @@ export class PerfectScrollBarComponent implements OnInit {
   public countries: Country[] = [];
   config: any;
   isLoading = false;
-  constructor(private apiService: CountriesApiService, public showProgressService: ShowProgressService, public elRef: ElementRef,private vf:ViewContainerRef,private componentFactoryResolver:ComponentFactoryResolver) { }
+  constructor(private apiService: CountriesApiService, public showProgressService: ShowProgressService, public elRef: ElementRef) { }
 
   ngOnInit() {
     this.config = {
@@ -26,8 +25,7 @@ export class PerfectScrollBarComponent implements OnInit {
       this.countries = r;
       this.showProgressService.close(a);
     });
-     let resolver = this.componentFactoryResolver.resolveComponentFactory(DynamicComponent);
-     let componentFactory =   this.vf.createComponent(resolver);
+
   }
 
 }
