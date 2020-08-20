@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
-import { CountriesApiService } from '../../service/countries-api.service';
-import { Country } from '../../models/country';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Country } from '../models/country';
+import { CountriesApiService } from '../service/countries-api.service';
+
 
 @Component({
   selector: 'app-reactive-form',

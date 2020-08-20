@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PerfectScrollBarComponent } from './play-ground/perfect-scroll-bar/perfect-scroll-bar.component';
-import { MatTreeComponent } from './play-ground/mat-tree/mat-tree.component';
-import { MatDialogContainerComponent } from './play-ground/mat-dialog-container/mat-dialog-container.component';
-import { InputValidationsComponent } from './play-ground/input-validations/input-validations.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ReactiveFormComponent } from './play-ground/reactive-form/reactive-form.component';
+import { PerfectScrollBarComponent } from './perfect-scroll-bar/perfect-scroll-bar.component';
+import { MatTreeComponent } from './mat-tree/mat-tree.component';
+import { MatDialogContainerComponent } from './mat-dialog-container/mat-dialog-container.component';
+import { InputValidationsComponent } from './input-validations/input-validations.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
 const appRoutes: Routes = [
