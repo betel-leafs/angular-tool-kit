@@ -13,6 +13,7 @@ import { Widget } from '../utilities/extensions.decorators';
 export class ChartOneComponent implements OnInit {
 
   constructor() { }
+  public name:string;
 
   ngOnInit(): void {
   }

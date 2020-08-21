@@ -15,7 +15,7 @@ import { WidgetCategory } from '../utilities/extensions.interfaces';
 export class ChartTwoComponent implements OnInit {
 
   constructor() { }
-
+  public lastName:string;
   ngOnInit(): void {
   }
 

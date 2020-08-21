@@ -7,7 +7,7 @@ export function Widget(definition: WidgetDef) {
     const extensionsService = ExtensionsService.getInstance();
     definition.runtimeComponent = {};
     definition.runtimeComponent.componentConstructor = constructor;
-    constructor.prototype.widgetDef = definition;
+    // constructor.prototype.widgetDef = definition;
     extensionsService.addWidget(definition);
   };
 }
