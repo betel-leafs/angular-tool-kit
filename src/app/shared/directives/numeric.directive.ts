@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, OnInit, Renderer } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[numeric]'
@@ -42,10 +42,10 @@ export class NumericDirective {
 @Directive({ selector: "[autoFocus]" })
 export class AutoFocusDirective implements OnInit {
     @Input("autoFocus") isFocused: boolean;
-    constructor(private hostElement: ElementRef, private renderer: Renderer) { }
+    constructor(private hostElement: ElementRef, private renderer: Renderer2) { }
     ngOnInit(): void {
         if (this.isFocused) {
-            this.renderer.invokeElementMethod(this.hostElement.nativeElement, "focus");
+            this.hostElement.nativeElement.focus();
         }
     }
 }

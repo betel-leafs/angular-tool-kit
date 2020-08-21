@@ -1,5 +1,6 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened style="background-color: #00000099;">
+  <mat-drawer mode="side" opened style="background-color: rgb(0 0 0 / 82%);">
+    <div class="logo">R</div>
     <div fxLayout="column">
       <div fxFlex="50" style="margin: 20px;">
         <a routerLink="/input-validations" routerLinkActive="active">Input-validations</a>
@@ -16,12 +17,16 @@
       <div fxFlex="50" style="margin: 20px;">
         <a routerLink="/reactive-form" routerLinkActive="active">Reactive Form</a>
       </div>
+      <div fxFlex="50" style="margin: 20px;">
+        <a routerLink="/board" routerLinkActive="active">Main Board</a>
+      </div>
+
     </div>
   </mat-drawer>
 
   <mat-drawer-content>
     <div class="header-top">
-      <h1>R&D APPLICATION</h1>
+      <h1>My Angular Play Ground</h1>
     </div>
     <div class="main-content">
       <router-outlet></router-outlet>

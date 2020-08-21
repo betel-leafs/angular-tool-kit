@@ -41,7 +41,7 @@ export class InputValidationsComponent implements OnInit {
     });
   }
   validateNumber(e: any) {
-    let input = String.fromCharCode(e.charCode);
+    const input = String.fromCharCode(e.charCode);
     const reg = /^\d*(?:[.,]\d{1,2})?$/;
 
     if (!reg.test(input)) {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { ShowProgressService } from 'src/app/service/show-progress.service';
 import { Country } from '../models/country';
 import { CountriesApiService } from '../service/countries-api.service';
 
@@ -11,16 +12,20 @@ export class PerfectScrollBarComponent implements OnInit {
 
   public countries: Country[] = [];
   config: any;
-  constructor(private apiService: CountriesApiService, ) { }
+  isLoading = false;
+  constructor(private apiService: CountriesApiService, public showProgressService: ShowProgressService, public elRef: ElementRef) { }
 
   ngOnInit() {
     this.config = {
       wheelSpeed: 2,
       minScrollbarLength: 200
     };
+    let a = this.showProgressService.showSelfOverlay(this.elRef);
     this.apiService.getCountryCodes().subscribe(r => {
       this.countries = r;
+      this.showProgressService.close(a);
     });
+
   }
 
 }
