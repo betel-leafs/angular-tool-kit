@@ -3,22 +3,22 @@
     <div class="logo">R</div>
     <div fxLayout="column">
       <div fxFlex="50" style="margin: 20px;">
-        <a routerLink="/input-validations" routerLinkActive="active">Input-validations</a>
+        <a routerLink="/input-validations" routerLinkActive="active" i18n>Input-validations</a>
       </div>
       <div fxFlex="50" style="margin: 20px;">
-        <a routerLink="/perfect-scroll" routerLinkActive="active">Perfect Scroll bar</a>
+        <a routerLink="/perfect-scroll" routerLinkActive="active" i18n>Perfect Scroll bar</a>
       </div>
       <div fxFlex="50" style="margin: 20px;">
-        <a routerLink="/mat-tree" routerLinkActive="active">Mat Tree</a>
+        <a routerLink="/mat-tree" routerLinkActive="active" i18n>Mat Tree</a>
       </div>
       <div fxFlex="50" style="margin: 20px;">
-        <a routerLink="/mat-dialog" routerLinkActive="active">Mat dialog</a>
+        <a routerLink="/mat-dialog" routerLinkActive="active" i18n>Mat dialog</a>
       </div>
       <div fxFlex="50" style="margin: 20px;">
-        <a routerLink="/reactive-form" routerLinkActive="active">Reactive Form</a>
+        <a routerLink="/reactive-form" routerLinkActive="active" i18n>Reactive Form</a>
       </div>
       <div fxFlex="50" style="margin: 20px;">
-        <a routerLink="/board" routerLinkActive="active">Main Board</a>
+        <a routerLink="/board" routerLinkActive="active" i18n>Main Board</a>
       </div>
 
     </div>
@@ -26,7 +26,8 @@
 
   <mat-drawer-content>
     <div class="header-top">
-      <h1>My Angular Play Ground</h1>
+      <h1><div i18n>My Angular Play Ground </div></h1>
+
     </div>
     <div class="main-content">
       <router-outlet></router-outlet>

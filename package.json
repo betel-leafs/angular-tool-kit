@@ -3,11 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4401",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "int:extract": "ng xi18n --output-path src/locale",
+    "start:fr": "ng serve --port 4010 --configuration=fr ",
+    "start:de": "ng serve --port 4020 --configuration=de",
+    "build:en": "ng build --configuration=en",
+    "build:fr": "ng build --configuration=fr",
+    "build:de": "ng build --configuration=de",
+    "build:all": "ng build --localize --prod"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +25,7 @@
     "@angular/core": "~9.1.4",
     "@angular/flex-layout": "^8.0.0-beta.27",
     "@angular/forms": "~9.1.4",
+    "@angular/localize": "^9.1.12",
     "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",

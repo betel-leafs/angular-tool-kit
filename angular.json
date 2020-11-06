@@ -13,12 +13,20 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "fr": "src/locale/messages.fr.xlf",
+          "de": "src/locale/messages.de.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/angular-tool-kit",
             "index": "src/index.html",
+            "localize":true,
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
@@ -29,7 +37,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"
             ],
             "scripts": []
           },
@@ -43,7 +51,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
+              "sourceMap": true,
               "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
@@ -61,17 +69,39 @@
                   "maximumError": "10kb"
                 }
               ]
-            }
+            },
+            "fr": {
+              "localize": [
+                "fr"
+              ]
+            },
+            "de": {
+              "localize": [
+                "de"
+              ]
+            },
+            "en": {
+              "localize": ["en"]
+          }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-tool-kit:build"
+            "browserTarget": "angular-tool-kit:build:en"
           },
           "configurations": {
             "production": {
               "browserTarget": "angular-tool-kit:build:production"
+            },
+            "fr": {
+              "browserTarget": "angular.io-example:build:fr"
+            },
+            "de": {
+              "browserTarget": "angular.io-example:build:de"
+            },
+            "en": {
+              "browserTarget": "angular.io-example:build:en"
             }
           }
         },

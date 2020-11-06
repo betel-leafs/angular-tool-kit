@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="e4522ceb857b661aa23d33b4dda26fe071582152" datatype="html">
+        <source>Input-validations</source>
+		  <target>GERMAN-Input-validations</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4ef4c8c5dd882eb5f06d38ebe01b382f8f1efde2" datatype="html">
+        <source>Perfect Scroll bar</source>
+		  <target>GERMAN-Perfect Scroll bar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8df16437756f645485f8e271f44bfb5d8c1bc0fb" datatype="html">
+        <source>Mat Tree</source>
+		  <target>GERMAN-Mat Tree</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd9afb846cde8bd6edfa1c6f424a5d97ac029306" datatype="html">
+        <source>Mat dialog</source>
+		  <target>GERMAN-Mat dialog</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b8c9768e5cbdc9fa76b7b7b8c290e504d977b670" datatype="html">
+        <source>Reactive Form</source>
+		  <target>GERMAN-Reactive Form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a9ddcbfeed6785ffe790263cc095cf7828e6b375" datatype="html">
+        <source>Main Board</source>
+		  <target>GERMAN-Main Board</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="377356503cb6ab7822743b0943e95e12a17d6c43" datatype="html">
+        <source>My Angular Play Ground </source>
+		  <target>GERMAN-My Angular Play Ground</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
