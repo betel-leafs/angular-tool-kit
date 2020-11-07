@@ -7,6 +7,7 @@ import { MatDialogContainerComponent } from './mat-dialog-container/mat-dialog-c
 import { InputValidationsComponent } from './input-validations/input-validations.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { BoardComponent } from './board/board.component';
+import { HomeComponent } from './home/home.component';
 
 
 const appRoutes: Routes = [
@@ -16,9 +17,10 @@ const appRoutes: Routes = [
   { path: 'input-validations', component: InputValidationsComponent },
   { path: 'reactive-form', component: ReactiveFormComponent },
   { path: 'board', component: BoardComponent },
+  { path: 'home', component: HomeComponent },
   {
     path: '',
-    redirectTo: '/input-validations',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }

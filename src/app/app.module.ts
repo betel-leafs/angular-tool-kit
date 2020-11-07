@@ -47,6 +47,7 @@ import { ChartTwoComponent } from "./chart-two/chart-two.component";
 import { BoardComponent } from "./board/board.component";
 import { WidgetLoaderComponent } from "./widget-loader/widget-loader.component";
 import { ExtensionsService } from "./utilities/extensions.service";
+import { HomeComponent } from './home/home.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -69,6 +70,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ChartTwoComponent,
     BoardComponent,
     WidgetLoaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

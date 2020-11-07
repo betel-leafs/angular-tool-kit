@@ -1,0 +1,12 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder=" Enter text" [matAutocomplete]="auto" [formControl]="searchControl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let item of filterData | async" [value]="item.Value">
+        {{item.Value}}-{{item.Type}}-{{item.Location}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+
